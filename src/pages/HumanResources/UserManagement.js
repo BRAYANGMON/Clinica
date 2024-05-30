@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, DatePicker, Form, Input, Modal, Select, Table } from 'antd';
+import { Button, DatePicker, Form, Input, Modal, Select, Table, message } from 'antd';
 import { columns, data } from '../../utils/users';
 
 const UserManagment = () => {
@@ -26,28 +26,28 @@ const UserManagment = () => {
           <Form.Item label='Nombre' name={'name'} rules={[{required: true, message:'el campo no debe de estar vacío'}]}>
             <Input />
           </Form.Item>
-          <Form.Item label='Cedula' name={'id'}>
+          <Form.Item label='Cedula' name={'id'} rules={[{required: true, message:'el campo no debe de estar vacío'}]}>
             <Input min={1} max={10}/>
           </Form.Item>
-          <Form.Item label='Correo Electronico' required rules={[{type: 'email'}]}>
+          <Form.Item label='Correo Electronico'name={'email'} rules={[{required: true, type: 'email', message:'el campo no debe de estar vacío'}]}>
             <Input/>            
           </Form.Item>
-          <Form.Item label='Celular' required>
+          <Form.Item label='Celular' name={'numberPhone'} rules={[{required: true, message:'el campo no debe de estar vacío'}]}>
             <Input min={1} max={10} />
           </Form.Item>
-          <Form.Item label='Fecha de nacimiento'required>
+          <Form.Item label='Fecha de nacimiento'name={'birthdate'}rules={[{required: true, message:'el campo no debe de estar vacío'}]}>
             <DatePicker/>
           </Form.Item>
-          <Form.Item label='Direccion' required>
+          <Form.Item label='Direccion' name={'addres'} rules={[{required: true, message:'el campo no debe de estar vacío'}]}>
             <Input/>
           </Form.Item>
-          <Form.Item label='Role' required>
+          <Form.Item label='Role' neme={'role'} rules={[{required: true, message:'el campo no debe de estar Vacío'}]}>
             <Select options={[{value:'Personal aAministrativo', label:'Personal Administrativo'},{value:'Recursos Humanos',label:'Recursos humanos'},{value:'Emfermeras',label:'Enfermeras'},{value:'Medicos',label:'Medicos'}]}/>
           </Form.Item>
-          <Form.Item label='usuario'required>
+          <Form.Item label='usuario'name={'userneme'} rules={[{required: true, message:'el campo no debe de estar vacío'}]}>
             <Input/>
           </Form.Item>
-          <Form.Item label='contraseña'required>
+          <Form.Item label='contraseña'name={'password'} rules={[{required: true, message:'el campo no debe de estar vacío'}]}>
             <Input.Password/>
           </Form.Item>
           <Form.Item>
